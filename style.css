@@ -1,0 +1,191 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Merriweather", serif;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #faf5ff;
+}
+
+body::before{
+    content: ' ';
+    position: absolute ;
+    height: 100%;
+    width: 100%;
+    background: #9333ea;
+    clip-path: inset(47% 0 0 0);
+    z-index: -1;
+}
+
+.container{
+    max-width: 950px;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 80px 0;
+}
+
+.container .main-card{
+    width: 200%;
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 0.4s ease;
+}
+
+#two:checked ~ .main-card{
+    margin-left: -100%;
+
+}
+
+.main-card .cards{
+    width: calc(100% / 2 - 10px);
+    display: flex;
+    justify-content: space-between; 
+    margin: 0 20px;  
+    flex-wrap: wrap;
+}
+
+.main-card .cards .card{
+    background: #fff;
+    width: calc(100% / 3 - 10px);
+    padding: 30px;
+    border-radius: 24px;
+    transition: all 0.4s linear;
+}
+
+.main-card .cards .card:hover{
+    transform: translateY(-15px);
+}
+
+.cards .card .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cards .card .content .img{
+    height: 130px;
+    width: 130px;
+    margin-bottom: 14px;
+    background: #c084fc;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.card .content .img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+
+}
+.card .content .details .name{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.card .content .details .job{
+    font-size: 18px;
+    color: #9333ea;
+}
+
+.card .content .media-icons{
+    display: flex;
+    margin-top: 10px;
+}
+
+.card .content .media-icons a {
+    height: 35px;
+    width: 35px;
+    color: #fff;
+    background: #9333ea;
+    margin: 0 4px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 33px;
+    font-size: 14px;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.content .media-icons a:hover{
+    border-color: #9333ea;
+    color:#9333ea;
+    background: #fff;
+}
+
+.button{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+
+.button label{
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    margin: 0 4px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+}
+
+.button label.active{
+    width: 35px;
+}
+
+#one:checked ~ .button label.one{
+    width: 35px;
+}
+
+#two:checked ~ .button label.two{
+    width: 35px;
+}
+
+#one:checked ~ .button label.two{
+    width: 15px;
+}
+
+#two:checked ~ .button label.one{
+    width: 15px;
+}
+
+input{
+    display: none;
+}
+
+@media (max-width : 768px) {
+    .main-card .cards .card{
+    width: calc(100% / 2 - 10px);
+    margin: 20px 0 10px 0;
+    }
+}
+
+@media (max-width : 600px) {
+    .main-card .cards .card{
+    width:100%;
+    }
+}
+
+
+
+
+
+
